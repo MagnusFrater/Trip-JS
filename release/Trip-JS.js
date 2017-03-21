@@ -125,7 +125,7 @@ function addTouchEndHandler (canvas, touchEndHandler) {
 }
 
 //
-// COLLISION DETECTION
+// COLLISION DETECTION (FLAT-EDGE)
 //
 
 /**
@@ -135,7 +135,7 @@ function addTouchEndHandler (canvas, touchEndHandler) {
  *
  * @param {number} primaryTop - y-coordinate of primary object's upper bound
  * @param {number} secondaryBottom - y-coordinate of secondary object's lower bound
- * @param {number} step - number of pixels to extend primaryTop
+ * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
  */
@@ -156,7 +156,7 @@ function collideUp (primaryTop, secondaryBottom, step) {
  *
  * @param {number} primaryBottom - y-coordinate of primary object's lower bound
  * @param {number} secondaryTop - y-coordinate of secondary object's upper bound
- * @param {number} step - number of pixels to extend primaryBottom
+ * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
  */
@@ -177,7 +177,7 @@ function collideDown (primaryBottom, secondaryTop, step) {
  *
  * @param {number} primaryLeft - x-coordinate of primary object's left bound
  * @param {number} secondaryRight - x-coordinate of secondary object's right bound
- * @param {number} step - number of pixels to extend primaryLeft
+ * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
  */
@@ -198,7 +198,7 @@ function collideLeft (primaryLeft, secondaryRight, step) {
  *
  * @param {number} primaryRight - x-coordinate of primary object's right bound
  * @param {number} secondaryLeft - x-coordinate of secondary object's left bound
- * @param {number} step - number of pixels to extend primaryRight
+ * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
  */
@@ -210,6 +210,80 @@ function collideRight (primaryRight, secondaryLeft, step) {
 	}
 
 	return false;
+}
+
+/**
+ * Checks for a collision between rectangles one step in the future.
+ *
+ * @method rectCollideUp
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ * @param {number} step - number of pixels to look ahead for a collision
+ *
+ * @return {bool} true if collision imminent, false if otherwise
+ */
+function rectCollideUp (rect1, rect2, step) {
+	return collideUp(rect1.y, rect2.y + rect2.height, step);
+}
+
+/**
+ * Checks for a collision between rectangles one step in the future.
+ *
+ * @method rectCollideDown
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ * @param {number} step - number of pixels to look ahead for a collision
+ *
+ * @return {bool} true if collision imminent, false if otherwise
+ */
+function rectCollideDown (rect1, rect2, step) {
+	return collideDown(rect1.y + rect1.height, rect2.y, step);
+}
+
+/**
+ * Checks for a collision between rectangles one step in the future.
+ *
+ * @method rectCollideLeft
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ * @param {number} step - number of pixels to look ahead for a collision
+ *
+ * @return {bool} true if collision imminent, false if otherwise
+ */
+function rectCollideLeft (rect1, rect2, step) {
+	return collideLeft(rect1.x, rect2.x + rect2.width, step);
+}
+
+/**
+ * Checks if two Rectangles intersect with each other.
+ *
+ * @method rectIntersects
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ *
+ * @return {bool} true if intersection exists, false if otherwise
+ */
+function rectIntersects (rect1, rect2) {
+	
+}
+
+/**
+ * Checks for a collision between rectangles one step in the future.
+ *
+ * @method rectCollideRight
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ * @param {number} step - number of pixels to look ahead for a collision
+ *
+ * @return {bool} true if collision imminent, false if otherwise
+ */
+function rectCollideRight (rect1, rect2, step) {
+	return collideRight(rect1.x + rect1.width, rect2.x, step);
 }
 
 //
@@ -231,4 +305,51 @@ function getRandInt (min, max) {
 	max = Math.floor(max);
 
 	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//
+// OBJECTS
+//
+
+/**
+ * Rectangle object constructor.
+ *
+ * @method Rectangle
+ *
+ * @param {number} x - x-coordinate
+ * @param {number} y - y-coordinate
+ * @param {number} width - width
+ * @param {number} height - height
+ * @param {color} color - color
+ */
+function Rectangle (x, y, width, height, color) {
+	this.x = x;
+	this.y = y;
+	this.width = width;
+	this.height = height;
+	this.color = color;
+
+	this.draw = function (fill) {
+		
+	}
+
+	this.collideUp = function (rect) {
+		return rectCollideUp(this, rect);
+	}
+
+	this.collideDown = function (rect) {
+		return rectCollideDown(this, rect);
+	}
+
+	this.collideLeft = function (rect) {
+		return rectCollideLeft(this, rect);
+	}
+
+	this.collideRight = function (rect) {
+		return rectCollideRight(this, rect);
+	}
+
+	this.intersects = function (rect) {
+		return rectIntersects(this, rect);
+	}
 }
