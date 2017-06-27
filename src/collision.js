@@ -94,7 +94,7 @@ function collideRight (primaryRight, secondaryLeft, step) {
  * @return {bool} true if collision imminent, false if otherwise
  */
 function rectCollideUp (rect1, rect2, step) {
-	return collideUp(rect1.y, rect2.y + rect2.height, step);
+	return collideUp(rect1.y, rect2.bottom, step);
 }
 
 /**
@@ -109,7 +109,7 @@ function rectCollideUp (rect1, rect2, step) {
  * @return {bool} true if collision imminent, false if otherwise
  */
 function rectCollideDown (rect1, rect2, step) {
-	return collideDown(rect1.y + rect1.height, rect2.y, step);
+	return collideDown(rect1.bottom, rect2.y, step);
 }
 
 /**
@@ -124,21 +124,7 @@ function rectCollideDown (rect1, rect2, step) {
  * @return {bool} true if collision imminent, false if otherwise
  */
 function rectCollideLeft (rect1, rect2, step) {
-	return collideLeft(rect1.x, rect2.x + rect2.width, step);
-}
-
-/**
- * Checks if two Rectangles intersect with each other.
- *
- * @method rectIntersects
- *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
- *
- * @return {bool} true if intersection exists, false if otherwise
- */
-function rectIntersects (rect1, rect2) {
-	
+	return collideLeft(rect1.x, rect2.right, step);
 }
 
 /**
@@ -153,5 +139,19 @@ function rectIntersects (rect1, rect2) {
  * @return {bool} true if collision imminent, false if otherwise
  */
 function rectCollideRight (rect1, rect2, step) {
-	return collideRight(rect1.x + rect1.width, rect2.x, step);
+	return collideRight(rect1.right, rect2.x, step);
+}
+
+/**
+ * Checks if two Rectangles intersect with each other.
+ *
+ * @method rectIntersects
+ *
+ * @param {Rectangle} rect1 - primary rectangle
+ * @param {Rectangle} rect2 - secondary rectangle
+ *
+ * @return {bool} true if intersection exists, false if otherwise
+ */
+function rectIntersects (rect1, rect2) {
+	
 }
