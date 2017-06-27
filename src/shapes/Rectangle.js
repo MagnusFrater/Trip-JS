@@ -3,40 +3,102 @@
  *
  * @method Rectangle
  *
- * @param {number} x - x-coordinate of the rectangle's top left corner
- * @param {number} y - y-coordinate of the rectangle's top left corner
- * @param {number} width - width
- * @param {number} height - height
+ * @param {Location} location - location of Rectangle's top left corner
+ * @param {Size} size - size
  * @param {color} color - color
  */
-function Rectangle (x, y, width, height, color) {
-	this.x = x;
-	this.y = y;
-	this.width = width;
-	this.height = height;
+function Rectangle (location, size, color) {
+	this.location = location;
+	this.size = size;
 	this.color = color;
 }
 
 /**
- * Returns Rectangle's right x-coordinate.
+ * Returns Rectangle's top left corner x-coordinate.
  *
- * @method Rectangle.right
+ * @method Rectangle.x
  *
- * @return {number} x-coordinate of Rectangle's right side
+ * @return {number} x-coordinate of Rectangle's top left corner
  */
-Rectangle.prototype.right = function () {
-	return this.x + this.width;
+Rectangle.prototype.x = function () {
+	return this.location.x;
 }
 
 /**
- * Returns Rectangle's bottom y-coordinate.
+ * Returns Rectangle's top left corner y-coordinate.
+ *
+ * @method Rectangle.y
+ *
+ * @return {number} y-coordinate of Rectangle's top left corner
+ */
+Rectangle.prototype.y = function () {
+	return this.location.y;
+}
+
+/**
+ * Returns Rectangle's width.
+ *
+ * @method Rectangle.width
+ *
+ * @return {number} returns Rectangle's width
+ */
+Rectangle.prototype.width = function () {
+	return this.size.width;
+}
+
+/**
+ * Returns Rectangle's height.
+ *
+ * @method Rectangle.height
+ *
+ * @return {number} returns Rectangle's height
+ */
+Rectangle.prototype.height = function () {
+	return this.size.height;
+}
+
+/**
+ * Returns Rectangle's top bound y-coordinate.
+ *
+ * @method Rectangle.top
+ *
+ * @return {number} y-coordinate of Rectangle's top bound
+ */
+Rectangle.prototype.top = function () {
+	return this.location.y;
+}
+
+/**
+ * Returns Rectangle's bottom bound y-coordinate.
  *
  * @method Rectangle.bottom
  *
- * @return {number} y-coordinate of Rectangle's bottom side
+ * @return {number} y-coordinate of Rectangle's bottom bound
  */
 Rectangle.prototype.bottom = function () {
-	return this.y + this.height;
+	return this.location.y + this.size.height;
+}
+
+/**
+ * Returns Rectangle's left bound x-coordinate.
+ *
+ * @method Rectangle.left
+ *
+ * @return {number} x-coordinate of Rectangle's left bound
+ */
+Rectangle.prototype.left = function () {
+	return this.location.x;
+}
+
+/**
+ * Returns Rectangle's right bound x-coordinate.
+ *
+ * @method Rectangle.right
+ *
+ * @return {number} x-coordinate of Rectangle's right bound
+ */
+Rectangle.prototype.right = function () {
+	return this.location.x + this.size.width;
 }
 
 /**
@@ -117,8 +179,8 @@ Rectangle.prototype.intersects = function (rect) {
  * @param {number} y - new y-coordinate
  */
 Rectangle.prototype.move = function (x, y) {
-	this.x = x;
-	this.y = y;
+	this.location.x = x;
+	this.location.y = y;
 }
 
 /**
@@ -130,8 +192,8 @@ Rectangle.prototype.move = function (x, y) {
  * @param {number} yOffset - number of pixels to offset the y-coordinate
  */
 Rectangle.prototype.traverse = function (xOffset, yOffset) {
-	this.x += xOffset;
-	this.y += yOffset;
+	this.location.x += xOffset;
+	this.location.y += yOffset;
 }
 
 /**
