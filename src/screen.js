@@ -29,8 +29,8 @@ function setCanvasFullscreen (canvas) {
  * @method resizeCanvas
  *
  * @param {canvas} canvas - html Canvas element
- * @param {number} width - new width (pixels)
- * @param {number} height - new height (pixels)
+ * @param {number} width - new width
+ * @param {number} height - new height
  */
 function resizeCanvas (canvas, width, height) {
 	canvas.width = width;
