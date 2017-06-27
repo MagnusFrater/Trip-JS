@@ -83,12 +83,12 @@ function collideRight (primaryRight, secondaryLeft, step) {
 }
 
 /**
- * Checks for a collision between rectangles one step in the future.
+ * Checks for a collision between Rectangles one step in the future.
  *
  * @method rectCollideUp
  *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
+ * @param {Rectangle} rect1 - primary Rectangle
+ * @param {Rectangle} rect2 - secondary Rectangle
  * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
@@ -98,12 +98,12 @@ function rectCollideUp (rect1, rect2, step) {
 }
 
 /**
- * Checks for a collision between rectangles one step in the future.
+ * Checks for a collision between Rectangles one step in the future.
  *
  * @method rectCollideDown
  *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
+ * @param {Rectangle} rect1 - primary Rectangle
+ * @param {Rectangle} rect2 - secondary Rectangle
  * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
@@ -113,12 +113,12 @@ function rectCollideDown (rect1, rect2, step) {
 }
 
 /**
- * Checks for a collision between rectangles one step in the future.
+ * Checks for a collision between Rectangles one step in the future.
  *
  * @method rectCollideLeft
  *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
+ * @param {Rectangle} rect1 - primary Rectangle
+ * @param {Rectangle} rect2 - secondary Rectangle
  * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
@@ -128,12 +128,12 @@ function rectCollideLeft (rect1, rect2, step) {
 }
 
 /**
- * Checks for a collision between rectangles one step in the future.
+ * Checks for a collision between Rectangles one step in the future.
  *
  * @method rectCollideRight
  *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
+ * @param {Rectangle} rect1 - primary Rectangle
+ * @param {Rectangle} rect2 - secondary Rectangle
  * @param {number} step - number of pixels to look ahead for a collision
  *
  * @return {bool} true if collision imminent, false if otherwise
@@ -147,11 +147,11 @@ function rectCollideRight (rect1, rect2, step) {
  *
  * @method rectIntersects
  *
- * @param {Rectangle} rect1 - primary rectangle
- * @param {Rectangle} rect2 - secondary rectangle
+ * @param {Rectangle} rect1 - primary Rectangle
+ * @param {Rectangle} rect2 - secondary Rectangle
  *
  * @return {bool} true if intersection exists, false if otherwise
  */
 function rectIntersects (rect1, rect2) {
-	
+	// TODO
 }
