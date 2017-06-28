@@ -16,14 +16,14 @@ function initGame (tickCallback, renderCallback, desired_ups) {
 }
 
 /**
- * Creates a canvas object and canvasContext.
+ * Creates the TripGameCanvas and TripGameCanvasContext.
  *
  * @method createCanvas
  */
 function createCanvas (){
 	// create canvas, get canvasContext
-	canvas = document.createElement("canvas");
-	canvasContext = canvas.getContext("2d");
+	TripGameCanvas = document.createElement("canvas");
+	TripGameCanvasContext = TripGameCanvas.getContext("2d");
 
 	// add canvas to body
 	document.body.appendChild(canvas);

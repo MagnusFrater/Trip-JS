@@ -1,38 +1,34 @@
 /**
- * Fills the given canvasContext with a specified color.
+ * Fills TripGameCanvasContext with a specified color.
  *
- * @method clearScreen
- *
- * @param {CanvasContext} canvasContext - CanvasContext
+ * @method clearGameScreen
+ * 
  * @param {color} color - color
  */
-function clearScreen (canvasContext, color) {
-	canvasContext.fillStyle = color;
-	canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+function clearGameScreen (color) {
+	TripGameCanvasContext.fillStyle = color;
+	TripGameCanvasContext.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 /**
- * Matchs the given canvas's size to the window's size.
+ * Matchs TripGameCanvas's size to the window's size.
  *
- * @method setCanvasFullcreen
- *
- * @param {canvas} canvas - html canvas element
+ * @method setGameCanvasFullcreen
  */
-function setCanvasFullscreen () {
-    canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+function setGameCanvasFullscreen () {
+    TripGameCanvas.width = window.innerWidth;
+	TripGameCanvas.height = window.innerHeight;
 }
 
 /**
- * Resizes the given canvas to a specified size.
+ * Resizes TripGameCanvas to a specified size.
  *
- * @method resizeCanvas
- *
- * @param {canvas} canvas - html Canvas element
+ * @method resizeGameCanvas
+ * 
  * @param {number} width - new width
  * @param {number} height - new height
  */
-function resizeCanvas (canvas, width, height) {
-	canvas.width = width;
-	canvas.height = height;
+function resizeGameCanvas (width, height) {
+	TripGameCanvas.width = width;
+	TripGameCanvas.height = height;
 }
