@@ -9,7 +9,7 @@
  * @return {boolean} true if intersection exists, false if otherwise
  */
 function getImage (assetsPath, fileName) {
-	let image = new Image();
-	image.src = assetsPath + fileName;
-	return image;
+	const img = new Image();
+	img.src = assetsPath + fileName;
+	return img;
 }

@@ -5,12 +5,10 @@
  *
  * @param {Location} location - location of Rectangle's top left corner
  * @param {Size} size - size
- * @param {color} color - color
  */
-function Rectangle (location, size, color) {
+function Rectangle (location, size) {
 	this.location = location;
 	this.size = size;
-	this.color = color;
 }
 
 /**
@@ -194,16 +192,4 @@ Rectangle.prototype.move = function (x, y) {
 Rectangle.prototype.traverse = function (xOffset, yOffset) {
 	this.location.x += xOffset;
 	this.location.y += yOffset;
-}
-
-/**
- * Renders a Rectangle to a given CanvasContext.
- *
- * @method Rectangle.render
- *
- * @param {CanvasContext} canvasContext - CanvasContext
- * @param {boolean} fill - decides whether to fill the drawn Rectangle with its color
- */
-Rectangle.prototype.render = function (canvasContext, fill) {
-	// TODO
 }
