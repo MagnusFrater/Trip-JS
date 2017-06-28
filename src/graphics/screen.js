@@ -18,7 +18,7 @@ function clearScreen (canvasContext, color) {
  *
  * @param {canvas} canvas - html canvas element
  */
-function setCanvasFullscreen (canvas) {
+function setCanvasFullscreen () {
     canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 }
