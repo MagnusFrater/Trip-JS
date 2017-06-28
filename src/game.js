@@ -8,10 +8,7 @@
  * @param {number} desired_ups - desired number of updates-per-second for both tick/render callbacks
  */
 function initGame (tickCallback, renderCallback, desired_ups) {
-	// create the canvas and canvasContext
 	createCanvas();
-
-	// create the game loop for tick and render
 	createGameLoop(tickCallback, renderCallback, desired_ups);
 }
 
@@ -21,11 +18,11 @@ function initGame (tickCallback, renderCallback, desired_ups) {
  * @method createCanvas
  */
 function createCanvas (){
-	// create canvas, get canvasContext
+	// create TripGameCanvas, get TripGameCanvasContext
 	TripGameCanvas = document.createElement("canvas");
 	TripGameCanvasContext = TripGameCanvas.getContext("2d");
 
-	// add canvas to body
+	// add TripGameCanvas to document.body
 	document.body.appendChild(canvas);
 }
 

@@ -3,11 +3,10 @@
  *
  * @method addMouseMoveHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} mouseMoveCallback - callback that handles the 'mousemove' event
  */
-function addMouseMoveHandler (canvas, mouseMoveCallback) {
-	canvas.addEventListener('mousemove', mouseMoveCallback(e));
+function addMouseMoveHandler (mouseMoveCallback) {
+	TripGameCanvas.addEventListener('mousemove', mouseMoveCallback(e));
 }
 
  /**
@@ -15,11 +14,10 @@ function addMouseMoveHandler (canvas, mouseMoveCallback) {
  *
  * @method addMouseDownHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} mouseDownCallback - callback that handles the 'mousedown' event
  */
-function addMouseDownHandler (canvas, mouseDownCallback) {
-	canvas.addEventListener('mousedown', mouseDownCallback(e));
+function addMouseDownHandler (mouseDownCallback) {
+	TripGameCanvas.addEventListener('mousedown', mouseDownCallback(e));
 }
 
 /**
@@ -27,11 +25,10 @@ function addMouseDownHandler (canvas, mouseDownCallback) {
  *
  * @method addMouseUpHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} mouseUpCallback - callback that handles the 'mouseup' event
  */
-function addMouseUpHandler (canvas, mouseUpCallback) {
-	canvas.addEventListener('mouseup', mouseUpCallback(e));
+function addMouseUpHandler (mouseUpCallback) {
+	TripGameCanvas.addEventListener('mouseup', mouseUpCallback(e));
 }
 
 /**
@@ -39,11 +36,10 @@ function addMouseUpHandler (canvas, mouseUpCallback) {
  *
  * @method addKeyDownHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} keyDownHandler - callback that handles the 'keydown' event
  */
-function addKeyDownHandler (canvas, keyDownHandler) {
-	canvas.addEventListener('keydown', keyDownHandler(e));
+function addKeyDownHandler (keyDownHandler) {
+	TripGameCanvas.addEventListener('keydown', keyDownHandler(e));
 }
 
 /**
@@ -51,11 +47,10 @@ function addKeyDownHandler (canvas, keyDownHandler) {
  *
  * @method addKeyUpHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} keyUpHandler - callback that handles the 'keyup' event
  */
-function addKeyUpHandler (canvas, keyUpHandler) {
-	canvas.addEventListener('keyup', keyUpHandler(e));
+function addKeyUpHandler (keyUpHandler) {
+	TripGameCanvas.addEventListener('keyup', keyUpHandler(e));
 }
 
 /**
@@ -63,11 +58,10 @@ function addKeyUpHandler (canvas, keyUpHandler) {
  *
  * @method addTouchMoveHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} touchMoveHandler - callback that handles the 'touchmove' event
  */
-function addTouchMoveHandler (canvas, touchMoveHandler) {
-	canvas.addEventListener('touchmove', touchMoveHandler(e));
+function addTouchMoveHandler (touchMoveHandler) {
+	TripGameCanvas.addEventListener('touchmove', touchMoveHandler(e));
 }
 
 /**
@@ -75,11 +69,10 @@ function addTouchMoveHandler (canvas, touchMoveHandler) {
  *
  * @method addTouchStartHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} touchStartHandler - callback that handles the 'touchstart' event
  */
-function addTouchStartHandler (canvas, touchStartHandler) {
-	canvas.addEventListener('touchstart', touchStartHandler(e));
+function addTouchStartHandler (touchStartHandler) {
+	TripGameCanvas.addEventListener('touchstart', touchStartHandler(e));
 }
 
 /**
@@ -87,9 +80,8 @@ function addTouchStartHandler (canvas, touchStartHandler) {
  *
  * @method addTouchEndHandler
  *
- * @param {element} canvas - html canvas element
  * @param {callback} touchEndHandler - callback that handles the 'touchend' event
  */
-function addTouchEndHandler (canvas, touchEndHandler) {
-	canvas.addEventListener('touchend', touchEndHandler(e));
+function addTouchEndHandler (touchEndHandler) {
+	TripGameCanvas.addEventListener('touchend', touchEndHandler(e));
 }
