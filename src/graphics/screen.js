@@ -16,8 +16,16 @@ function clearGameScreen (color) {
  * @method setGameCanvasFullcreen
  */
 function setGameCanvasFullscreen () {
-    TripGameCanvas.width = window.innerWidth;
-	TripGameCanvas.height = window.innerHeight;
+    // TripGameCanvas.width = window.innerWidth;
+	// TripGameCanvas.height = window.innerHeight;
+
+	// TripGameCanvas.style.width = "100%";
+	// TripGameCanvas.style.height = "100%";
+
+	document.body.style.margin = 0;
+	document.body.style.padding = 0;
+	TripGameCanvas.style.width = "100%";
+	TripGameCanvas.style.height = "100%";
 }
 
 /**
@@ -29,6 +37,8 @@ function setGameCanvasFullscreen () {
  * @param {number} height - new height
  */
 function resizeGameCanvas (width, height) {
-	TripGameCanvas.width = width;
-	TripGameCanvas.height = height;
+	//TripGameCanvas.width = width;
+	//TripGameCanvas.height = height;
+	TripGameCanvas.style.width = width;
+	TripGameCanvas.style.height = height;
 }

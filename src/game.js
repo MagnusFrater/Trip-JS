@@ -15,15 +15,28 @@ function initGame (tickCallback, renderCallback, desired_ups) {
 /**
  * Creates the TripGameCanvas and TripGameCanvasContext.
  *
- * @method createCanvas
+ * @method createGameCanvas
  */
-function createCanvas (){
-	// create TripGameCanvas, get TripGameCanvasContext
+function createGameCanvas () {
+	// create TripGameCanvas
 	TripGameCanvas = document.createElement("canvas");
+	resetGameCanvas();
+
+	// create TripGameCanvasContext
 	TripGameCanvasContext = TripGameCanvas.getContext("2d");
 
 	// add TripGameCanvas to document.body
 	document.body.appendChild(canvas);
+}
+
+/**
+ * Resets TripGameCanvas' style.
+ *
+ * @method resetGameCanvas
+ */
+function resetGameCanvas () {
+	TripGameCanvas.style.margin = 0;
+	TripGameCanvas.style.padding = 0;
 }
 
 /**
